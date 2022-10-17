@@ -7,12 +7,20 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
+import javax.swing.JRadioButton;
+import java.awt.FlowLayout;
+import java.awt.CardLayout;
+import javax.swing.JToggleButton;
+import javax.swing.JPasswordField;
 
 public class winGame extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField tfNumber2;
-	private JTextField tfNumber1;
+	private JTextField textField;
+	private JTextField textField_1;
+	private JPasswordField passwordField;
 
 	/**
 	 * Launch the application.
@@ -41,31 +49,28 @@ public class winGame extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
+		contentPane.setLayout(null);
 		
-		tfNumber1 = new JTextField();
-		contentPane.add(tfNumber1);
-		tfNumber1.setColumns(10);
+		textField = new JTextField();
+		textField.setBounds(63, 41, 116, 21);
+		contentPane.add(textField);
+		textField.setColumns(10);
 		
-		tfNumber2 = new JTextField();
-		contentPane.add(tfNumber2);
-		tfNumber2.setColumns(10);
+		JButton btnNewButton = new JButton("New button");
+		btnNewButton.setBounds(191, 40, 97, 23);
+		contentPane.add(btnNewButton);
 		
-		JButton btnRun = new JButton("실행");
-		btnRun.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				int i, sum=0;
-				int first = Integer.parseInt(tfNumber1.getText ()); //int로 바꾸기 위해 Integer.parseInt
-				int last = Integer.parseInt(tfNumber2.getText ()); //int로 바꾸기 위해 Integer.parseInt
-				for(i=first; i<=last;i++)
-					sum = sum + i ;
-				System.out.println("합은" + sum + "입니다");
-				
-			
-			}
-		});
+		textField_1 = new JTextField();
+		textField_1.setBounds(63, 72, 225, 28);
+		contentPane.add(textField_1);
+		textField_1.setColumns(10);
 		
+		JToggleButton tglbtnNewToggleButton = new JToggleButton("New toggle button");
+		tglbtnNewToggleButton.setBounds(63, 110, 135, 23);
+		contentPane.add(tglbtnNewToggleButton);
 		
-		contentPane.add(btnRun);
+		passwordField = new JPasswordField();
+		passwordField.setBounds(210, 110, 84, 21);
+		contentPane.add(passwordField);
 	}
-
 }
