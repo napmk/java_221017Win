@@ -72,7 +72,13 @@ public class winCalender extends JFrame {
       JButton btnView = new JButton("달력 보기");
       btnView.addActionListener(new ActionListener() {
       	public void actionPerformed(ActionEvent e) {
-      		for(int i=1; i<=31; i++) {
+      		int i;
+      		int Months[] = {31,28,31,30,31,30,31,31,30,31,30,31};  //1~12월
+      		int month = Integer.parseInt(tfMonth.getText());// 정수로 바꿔라
+      		int lastDay = Months[month-1]; //배열 이므로 -1
+
+      		
+      		for(i=1; i<=lastDay; i++) {
     			JButton btn = new JButton(Integer.toString(i)); //버튼생성
     			calendar_panel.add(btn); 
     			
